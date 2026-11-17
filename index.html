@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Personal portfolio of a computer science student">
+<title>Your Name | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header><nav class="nav wrap"><a class="logo" href="#home">your<span>folio</span>.</a>
+<button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+<div class="links" id="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+<div class="nav-right"><button id="theme" class="theme" aria-label="Toggle theme">☼</button><a class="nav-cta" href="#contact">Let's connect ↗</a></div></nav></header>
+<main>
+<section class="hero wrap" id="home"><div class="hero-copy reveal">
+<p class="pill"><i></i> OPEN TO LEARNING & COLLABORATION</p><p class="hello">HELLO, WORLD! I'M</p>
+<h1>Your Name<span>.</span></h1><h2>I build things for the <b id="typed">web</b><em>|</em></h2>
+<p class="intro">A computer science student who enjoys turning curious ideas into useful digital experiences. I love learning by building, solving problems and exploring what technology can do.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore my work ↘</a><a class="btn secondary" href="#contact">Say hello ↗</a></div>
+<div class="meta">BASED IN INDIA <i></i> ALWAYS LEARNING</div></div>
+<div class="visual reveal"><div class="orbit one"></div><div class="orbit two"></div><div class="code"><div class="code-head"><span>● ● ●</span> developer.js <span>•••</span></div>
+<pre><span>01</span> <b>const</b> developer = {
+<span>02</span>   name: <i>'Your Name'</i>,
+<span>03</span>   role: <i>'CSE Student'</i>,
+<span>04</span>   curious: <strong>true</strong>,
+<span>05</span>   skills: [<i>'Python'</i>, <i>'C'</i>],
+<span>06</span>   next: <i>'Build something cool'</i>
+<span>07</span>};</pre><small>// currently learning & creating ✦</small></div>
+<div class="float f1">✳ Creative thinker</div><div class="float f2"><i></i> Problem solver</div><div class="stamp">IDEAS<br><b>→</b><br>IMPACT</div></div>
+<a class="scroll" href="#about">↓ &nbsp; SCROLL TO EXPLORE</a></section>
+
+<section class="section about" id="about"><div class="wrap"><p class="eyebrow reveal">01 / A LITTLE ABOUT ME</p><h2 class="section-title reveal">Curious by nature.<br><span>Builder by choice.</span></h2>
+<div class="about-grid"><div class="quote reveal"><b>“</b><p>I believe the best way to learn technology is to <span>make something with it.</span></p></div>
+<div class="about-text reveal"><p>I'm a Computer Science and Engineering student interested in programming, software development and exploring new technologies. I enjoy breaking complex problems into smaller steps and turning ideas into working projects.</p>
+<p>Currently strengthening my foundations in Python, C and web technologies while exploring AI and cybersecurity.</p>
+<div class="facts"><div><b>01</b><small>Curiosity first</small></div><div><b>02</b><small>Learn by building</small></div><div><b>03</b><small>Keep improving</small></div></div></div></div></div></section>
+
+<section class="section" id="skills"><div class="wrap"><div class="heading-row reveal"><div><p class="eyebrow">02 / MY TOOLKIT</p><h2 class="section-title">Tools of my <span>trade.</span></h2></div><p>Still learning, always experimenting. Here's what I'm working with.</p></div>
+<div class="skills reveal">
+<div class="skill"><b class="sicon">Py</b><div><strong>Python</strong><small>Programming</small></div><label>Learning</label></div>
+<div class="skill"><b class="sicon blue">C</b><div><strong>C</strong><small>Programming</small></div><label>Foundations</label></div>
+<div class="skill"><b class="sicon orange">5</b><div><strong>HTML & CSS</strong><small>Web fundamentals</small></div><label>Building</label></div>
+<div class="skill"><b class="sicon yellow">JS</b><div><strong>JavaScript</strong><small>Interactivity</small></div><label>Learning</label></div>
+<div class="skill"><b class="sicon green">▤</b><div><strong>SQL / SQLite</strong><small>Data storage</small></div><label>Exploring</label></div>
+<div class="skill"><b class="sicon pink">⌘</b><div><strong>Git & GitHub</strong><small>Version control</small></div><label>Exploring</label></div></div>
+<div class="soft reveal"><span>PROBLEM-SOLVING</span><span>ADAPTABILITY</span><span>TEAMWORK</span><span>QUICK LEARNING</span></div></div></section>
+
+<section class="section projects" id="projects"><div class="wrap"><div class="heading-row reveal"><div><p class="eyebrow">03 / SELECTED WORK</p><h2 class="section-title">Made with <span>curiosity.</span></h2></div><p>A few things I've explored through code and experimentation.</p></div>
+<div class="filters reveal"><button class="active" data-filter="all">All projects</button><button data-filter="ai">AI & NLP</button><button data-filter="systems">Systems</button></div>
+<div class="project-grid">
+<article class="project reveal" data-kind="ai"><div class="art ai-art"><small>PROJECT 01 · AI / NLP</small><div class="orb">AI<sup>✳</sup></div><label>ASK. LEARN. DISCOVER.</label></div><div class="project-body"><p class="eyebrow">COLLEGE ASSISTANT</p><h3>AI-Powered Smart College Assistant</h3><p>A chatbot concept designed to help students find answers about courses, clubs, events and campus information through natural language questions.</p><div class="tags"><span>Python</span><span>NLP</span><span>AI</span></div><button class="details" data-project="college">Explore project ↗</button></div></article>
+<article class="project reveal" data-kind="systems"><div class="art sys-art"><small>PROJECT 02 · SYSTEMS / ML</small><div class="terminal"><p>› scanning logs...</p><p>› detecting patterns</p><p class="success">✓ anomaly detected</p><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><label>OBSERVE. DETECT. UNDERSTAND.</label></div><div class="project-body"><p class="eyebrow">LOG ANALYSIS</p><h3>OS Log Analyzer</h3><p>A learning project exploring log collection, preprocessing, anomaly detection and visualizing system events to make troubleshooting easier.</p><div class="tags"><span>Python</span><span>SQLite</span><span>ML</span></div><button class="details" data-project="logs">Explore project ↗</button></div></article>
+</div><p class="project-note reveal">More experiments are always in progress ✳</p></div></section>
+
+<section class="section" id="contact"><div class="wrap contact reveal"><div><p class="eyebrow">04 / HAVE SOMETHING IN MIND?</p><h2>Let's make<br><span>it happen.</span></h2><p>Have a project idea, want to collaborate, or just want to talk tech? My inbox is open.</p><a class="btn primary" href="mailto:you@example.com">Say hello ↗</a></div>
+<div class="contact-links"><small>EMAIL</small><div class="email-row"><a id="email" href="mailto:you@example.com">you@example.com</a><button id="copy">Copy</button></div><small>LINKEDIN</small><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Let's connect ↗</a><small>GITHUB</small><a href="https://github.com/" target="_blank" rel="noreferrer">Explore my code ↗</a><p id="feedback" aria-live="polite"></p></div></div></section>
+</main>
+<footer><div class="wrap foot"><a class="logo" href="#home">your<span>folio</span>.</a><p>Designed with curiosity · © <span id="year"></span></p><a href="#home">Back to top ↑</a></div></footer>
+<div class="modal" id="modal" aria-hidden="true"><div class="shade" data-close></div><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="close" aria-label="Close">×</button><p class="eyebrow" id="modalType"></p><h2 id="modalTitle"></h2><p id="modalDesc"></p><div id="modalTags" class="tags"></div><small>Update this section with your real repository link when ready.</small></div></div>
+<button class="top" id="top" aria-label="Back to top">↑</button>
+</body></html>

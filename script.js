@@ -1,0 +1,20 @@
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const menu=$('#menu'),links=$('#links');
+menu.addEventListener('click',()=>{links.classList.toggle('open');menu.textContent=links.classList.contains('open')?'×':'☰';});
+$$('.links a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.textContent='☰';}));
+const theme=$('#theme');if(localStorage.getItem('portfolio-theme')==='light')document.body.classList.add('light');
+theme.textContent=document.body.classList.contains('light')?'☾':'☼';
+theme.addEventListener('click',()=>{document.body.classList.toggle('light');let light=document.body.classList.contains('light');localStorage.setItem('portfolio-theme',light?'light':'dark');theme.textContent=light?'☾':'☼';});
+const words=['web','AI','new ideas','the future'];let wi=0,ci=0,del=false;
+function type(){let w=words[wi];$('#typed').textContent=w.slice(0,ci);if(!del&&ci<w.length)ci++;else if(del&&ci>0)ci--;else if(!del){del=true;setTimeout(type,900);return;}else{del=false;wi=(wi+1)%words.length;}setTimeout(type,del?65:115);}type();
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.12});
+$$('.reveal').forEach(el=>observer.observe(el));
+function scrollUI(){let max=document.documentElement.scrollHeight-innerHeight;$('#progress').style.width=(max?scrollY/max*100:0)+'%';$('#top').classList.toggle('show',scrollY>450);}addEventListener('scroll',scrollUI,{passive:true});scrollUI();
+$('#top').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+$$('.filters button').forEach(b=>b.addEventListener('click',()=>{$$('.filters button').forEach(x=>x.classList.remove('active'));b.classList.add('active');$$('.project').forEach(p=>p.classList.toggle('hide',b.dataset.filter!=='all'&&p.dataset.kind!==b.dataset.filter));}));
+const data={college:{type:'AI / NLP · PROJECT 01',title:'AI-Powered Smart College Assistant',desc:'A conversational assistant concept for a college environment. It aims to help students find information about courses, clubs, events, placements and campus activities using natural language questions. The focus is on clear, relevant answers rather than generic replies.',tags:['Python','Natural Language Processing','AI','Chatbot']},logs:{type:'SYSTEMS / ML · PROJECT 02',title:'OS Log Analyzer',desc:'A system-log analysis project exploring collection and preprocessing of log events, identifying unusual patterns and presenting useful insights. It combines software engineering, data handling and machine-learning concepts to support easier troubleshooting.',tags:['Python','SQLite','Anomaly Detection','Data Visualization']}};
+const modal=$('#modal');function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+$$('.details').forEach(b=>b.addEventListener('click',()=>{let d=data[b.dataset.project];$('#modalType').textContent=d.type;$('#modalTitle').textContent=d.title;$('#modalDesc').textContent=d.desc;$('#modalTags').replaceChildren(...d.tags.map(t=>{let s=document.createElement('span');s.textContent=t;return s;}));modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('#close').focus();}));
+$('#close').addEventListener('click',closeModal);$$('[data-close]').forEach(x=>x.addEventListener('click',closeModal));addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+$('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#email').textContent);$('#feedback').textContent='Email copied!';}catch{$('#feedback').textContent='Select the email address to copy it.';}});
+$('#year').textContent=new Date().getFullYear();
