@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Temperature converter</h1>
+    <p class="intro">Enter a temperature, pick its unit, and see it in all three scales.</p>
+
+    <div class="layout">
+      <form id="converter-form" novalidate>
+        <div class="field">
+          <label for="temp-input">Temperature</label>
+          <input
+            id="temp-input"
+            name="temperature"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            placeholder="e.g. 36.6"
+            aria-describedby="input-error"
+            aria-invalid="false">
+          <p id="input-error" class="error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <fieldset class="field units">
+          <legend>Convert from</legend>
+          <div class="segmented">
+            <input type="radio" id="unit-c" name="unit" value="C" checked>
+            <label for="unit-c">Celsius</label>
+
+            <input type="radio" id="unit-f" name="unit" value="F">
+            <label for="unit-f">Fahrenheit</label>
+
+            <input type="radio" id="unit-k" name="unit" value="K">
+            <label for="unit-k">Kelvin</label>
+          </div>
+        </fieldset>
+
+        <button type="submit" id="convert-btn">Convert</button>
+      </form>
+
+      <div class="gauge" aria-hidden="true">
+        <div class="tube"><div class="mercury" id="mercury"></div></div>
+        <div class="bulb" id="bulb"></div>
+      </div>
+    </div>
+
+    <section class="results" aria-live="polite" aria-labelledby="results-heading">
+      <h2 id="results-heading">Results</h2>
+      <p id="results-empty" class="empty">Your converted values will appear here.</p>
+      <dl id="results-list" hidden>
+        <div class="row" data-unit="C"><dt>Celsius</dt><dd><span class="value" id="out-c"></span><span class="symbol">°C</span></dd></div>
+        <div class="row" data-unit="F"><dt>Fahrenheit</dt><dd><span class="value" id="out-f"></span><span class="symbol">°F</span></dd></div>
+        <div class="row" data-unit="K"><dt>Kelvin</dt><dd><span class="value" id="out-k"></span><span class="symbol">K</span></dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
