@@ -1,4 +1,4 @@
-# Creative Personal Portfolio
+# Personal Portfolio
 
 Features:
 - Responsive layout and mobile navigation
